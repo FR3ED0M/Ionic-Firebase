@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { OAuthService } from 'angular-oauth2-oidc';
+import { HomePage } from '../../pages/home/home';
 
 declare const OktaAuth: any;
 
@@ -23,7 +24,7 @@ constructor(private http: Http, private oauthService: OAuthService) {
 	  
   		let options = new RequestOptions({ headers: headers });
       
-        return this.http.get('http://localhost:8080/good-beers', options)
+        return this.http.get('http://localhost:8100', options)
           .map((response: Response) => response.json());
     }    
 }
